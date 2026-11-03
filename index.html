@@ -1,30 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>lets start your journey</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tajim Tour & Travels — Umrah, visa, passport and travel assistance.">
+  <title>Tajim Tour & Travels | Umrah & Visa Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #f3f5f9;
-      padding: 50px 15px;
-    }
-    h1 { color: #183b70; }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 500px;
-      margin: auto;
-    }
+    :root{--green:#176b4b;--deep:#0b3529;--gold:#e7b735;--cream:#fbfaf6;--ink:#17231f;--muted:#68756f}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+    a{text-decoration:none;color:inherit}.wrap{width:min(1160px,92%);margin:auto}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid #e8eee9}
+    .navin{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.08em;color:var(--green);font-size:19px}
+    .brandmark{width:39px;height:39px;border-radius:13px;background:linear-gradient(145deg,#2a9870,var(--deep));display:grid;place-items:center;color:#fff;font-family:Georgia;font-size:23px;box-shadow:0 8px 18px #176b4b35}
+    .brand small{display:block;font-size:9px;letter-spacing:.22em;color:#7b817d;margin-top:1px}
+    .links{display:flex;gap:27px;align-items:center;font-size:13px;font-weight:700;color:#42524b}.links a:hover{color:var(--green)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:999px;background:var(--gold);color:#173b2d;font-weight:800;box-shadow:0 9px 22px #d6a82e38;transition:.25s}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 14px 25px #d6a82e55}.btn.green{background:var(--green);color:white}
+    .hero{position:relative;min-height:670px;display:flex;align-items:center;overflow:hidden;background:radial-gradient(circle at 78% 30%,#dcefe5 0,transparent 32%),linear-gradient(120deg,#f9faf5 10%,#eaf4ed 100%)}
+    .hero:before{content:"";position:absolute;width:550px;height:550px;border:1px solid #b7d5c4;border-radius:50%;right:-100px;top:30px;box-shadow:0 0 0 35px #dcebe266,0 0 0 75px #dcebe244;animation:orbit 24s linear infinite}
+    .hero:after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:120px;bottom:-210px;background:linear-gradient(140deg,#e9c85e,#c68c18);filter:blur(1px);opacity:.22}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;padding:78px 0}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:28px;height:2px;background:var(--gold)}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,75px);line-height:1.04;letter-spacing:-.04em;margin:20px 0;color:var(--deep)}
+    h1 span{color:var(--green);font-style:italic}.lead{font-size:17px;line-height:1.8;color:#64736b;max-width:540px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.trust{display:flex;gap:24px;flex-wrap:wrap;margin-top:34px;color:#66756d;font-size:12px;font-weight:700}.trust b{color:var(--green);font-size:17px;display:block}
+    .visual{position:relative;perspective:1100px;min-height:475px;display:grid;place-items:center}
+    .orb{position:absolute;width:350px;height:350px;border-radius:50%;background:linear-gradient(135deg,#d7eee0,#9bc8ac);filter:drop-shadow(0 35px 35px #174d3520);animation:float 6s ease-in-out infinite}
+    .hero-card{position:relative;width:min(390px,90%);padding:13px;background:#fff;border-radius:25px;box-shadow:0 35px 70px #0a38272b;transform:rotateY(-10deg) rotateX(4deg);animation:cardfloat 7s ease-in-out infinite;transition:.5s}
+    .hero-card:hover{transform:rotateY(0) rotateX(0) translateY(-8px)}
+    .hero-card img{width:100%;height:450px;object-fit:cover;object-position:top;border-radius:16px;display:block}
+    .floating-tag{position:absolute;right:-15px;bottom:34px;background:#fff;padding:15px 19px;border-radius:16px;box-shadow:0 15px 35px #123c2925;font-size:12px;font-weight:800;color:var(--green);animation:float 5s ease-in-out infinite}
+    .floating-tag strong{display:block;font-size:22px;color:var(--deep)}
+    section{padding:92px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 43px}.section-head .eyebrow{justify-content:center}
+    h2{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);color:var(--deep);margin:14px 0}.section-head p{color:var(--muted);line-height:1.7}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.service{background:#fff;border:1px solid #e7eee8;border-radius:22px;padding:29px;box-shadow:0 10px 30px #163c2410;transition:.35s;transform-style:preserve-3d}
+    .service:hover{transform:translateY(-9px) rotateX(3deg);box-shadow:0 22px 40px #163c2420}.icon{width:52px;height:52px;border-radius:16px;background:#e8f4eb;color:var(--green);display:grid;place-items:center;font-size:25px}
+    .service h3{margin:20px 0 9px;color:var(--deep)}.service p{color:var(--muted);font-size:14px;line-height:1.7;margin:0}
+    .offer{background:linear-gradient(135deg,#0b3529,#176b4b);color:#fff;position:relative;overflow:hidden}
+    .offer:before{content:"";position:absolute;width:520px;height:520px;border:1px solid #ffffff20;border-radius:50%;right:-140px;top:-210px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff06}
+    .offer-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.offer h2{color:#fff}.offer p{color:#d5e5dc;line-height:1.8}.price{font-size:clamp(38px,5vw,58px);font-weight:800;color:#f3c64d;margin:18px 0}.price small{font-size:14px;color:#e1eee7;display:block;font-weight:600}
+    .offer-img{border:9px solid #ffffff18;border-radius:24px;overflow:hidden;box-shadow:0 28px 55px #0004;transform:rotateY(-7deg);transition:.5s}.offer-img:hover{transform:rotateY(0) translateY(-7px)}.offer-img img{display:block;width:100%;height:480px;object-fit:cover;object-position:top}
+    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:25px}.gallery-card{background:white;border-radius:22px;overflow:hidden;box-shadow:0 15px 35px #173b2412;transition:.35s}.gallery-card:hover{transform:translateY(-7px)}.gallery-card img{width:100%;height:460px;object-fit:contain;background:#f2f4f1;display:block}.gallery-card div{padding:20px 23px}.gallery-card h3{margin:0 0 6px;color:var(--deep)}.gallery-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+    .cta{padding:70px 0;background:linear-gradient(110deg,#eaf4ec,#f9f5e9)}.cta-box{display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{margin:0}.cta p{color:var(--muted);margin:9px 0 0}
+    footer{background:#09291f;color:#d9e8df;padding:50px 0 25px}.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.foot strong{font-size:20px;color:white}.foot p{color:#a9c1b3;line-height:1.8;font-size:13px}.footlinks{display:flex;gap:18px;flex-wrap:wrap;font-size:13px}.copyright{border-top:1px solid #ffffff20;margin-top:35px;padding-top:20px;color:#8eaa9b;font-size:12px}
+    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:#20bd67;color:#fff;display:grid;place-items:center;font-size:27px;box-shadow:0 12px 25px #0b472b55;animation:pulse 2.5s infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}@keyframes cardfloat{0%,100%{transform:rotateY(-10deg) rotateX(4deg) translateY(0)}50%{transform:rotateY(-5deg) rotateX(2deg) translateY(-12px)}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes pulse{0%,100%{box-shadow:0 12px 25px #0b472b55,0 0 0 0 #20bd6750}50%{box-shadow:0 12px 25px #0b472b55,0 0 0 13px #20bd6700}}
+    @media(max-width:800px){.links{display:none}.hero-grid,.offer-grid{grid-template-columns:1fr}.hero{min-height:auto}.hero-grid{padding:60px 0 70px}.visual{min-height:510px}.services{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.gallery-card img{height:auto;max-height:620px}.offer-img img{height:auto;max-height:620px}.cta-box{display:block}.cta-box .btn{margin-top:20px}section{padding:70px 0}}
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Welcome to My Website</h1>
-    <p>This is my own website!</p>
-    <p>Thank you for visiting.</p>
+<header class="nav"><div class="wrap navin">
+  <a class="brand" href="#"><span class="brandmark">T</span><span>TAJIM<small>TOUR & TRAVELS</small></span></a>
+  <nav class="links"><a href="#services">Services</a><a href="#umrah">Umrah</a><a href="#gallery">Travel Updates</a><a href="#contact">Contact</a></nav>
+  <a class="btn" href="https://wa.me/918504977790?text=Assalamu%20Alaikum%2C%20I%20want%20travel%20details" target="_blank">Enquire Now ↗</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <div class="eyebrow">Your trusted travel partner</div>
+    <h1>Your journey.<br><span>Our care.</span></h1>
+    <p class="lead">Make your sacred journey and international travel simpler with Tajim Tour & Travels. Get personal assistance for Umrah packages, visa and passport services, and travel planning.</p>
+    <div class="hero-actions"><a class="btn" href="#umrah">Explore Umrah Packages</a><a class="btn green" href="#contact">Talk to our team</a></div>
+    <div class="trust"><div><b>Umrah</b>Package assistance</div><div><b>Visa</b>Travel documentation</div><div><b>Support</b>Personal guidance</div></div>
   </div>
-</body>
-</html>
+  <div class="visual"><div class="orb"></div><div class="hero-card"><img src="assets/umrah-offer.png" alt="Tajim Umrah offer poster"></div><div class="floating-tag"><strong>₹98,000*</strong>Starting package price</div></div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">How we can help</div><h2>Travel with confidence</h2><p>Thoughtful guidance at every step — from planning your journey to preparing your travel documents.</p></div>
+  <div class="services">
+    <article class="service"><div class="icon">☾</div><h3>Umrah Packages</h3><p>Package information, booking guidance and support for your journey to Makkah and Madinah.</p></article>
+    <article class="service"><div class="icon">✈</div><h3>Visa Assistance</h3><p>Travel consultation and document-verification assistance for your visa application process.</p></article>
+    <article class="service"><div class="icon">▣</div><h3>Passport Services</h3><p>Guidance with passport-related information and travel documentation requirements.</p></article>
+  </div>
+</div></section>
+
+<section class="offer" id="umrah"><div class="wrap offer-grid">
+  <div><div class="eyebrow" style="color:#f3c64d">Featured Umrah departure</div><h2>Answer the call.<br>Begin your journey.</h2>
+    <p>Explore the Umrah offer shared by Tajim Tour & Travels. Contact our team to confirm current availability, inclusions, hotel details and final pricing before booking.</p>
+    <div class="price">₹98,000*<small>Starting price shown in the supplied poster</small></div>
+    <p><b>Poster schedule:</b> 16 November – 04 December 2026<br><b>Seats:</b> 15 seats shown in the supplied creative</p>
+    <a class="btn" href="https://wa.me/918504977790?text=Assalamu%20Alaikum%2C%20please%20share%20the%20latest%20Umrah%20package%20details" target="_blank">Request package details ↗</a>
+  </div>
+  <div class="offer-img"><img src="assets/umrah-offer.png" alt="Umrah package advertisement"></div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Latest information</div><h2>Plan your next journey</h2><p>View the travel creatives and itinerary information shared by our team.</p></div>
+  <div class="gallery">
+    <article class="gallery-card"><img src="assets/visa-services.jpg" alt="Tajim visa and passport services poster"><div><h3>Visa & Passport Services</h3><p>Travel consultation, document verification and customer support.</p></div></article>
+    <article class="gallery-card"><img src="assets/november-itinerary.png" alt="November Umrah group itinerary"><div><h3>November Umrah Group</h3><p>Flight and group schedule as shown in the supplied itinerary. Please confirm details with our team.</p></div></article>
+  </div>
+</div></section>
+
+<section class="cta" id="contact"><div class="wrap cta-box"><div><div class="eyebrow">Let's plan together</div><h2>Ready to take the next step?</h2><p>Speak with Tajim Tour & Travels for package and service details.</p></div><a class="btn green" href="https://wa.me/918504977790?text=Assalamu%20Alaikum%20Tajim%20Tour%20%26%20Travels" target="_blank">WhatsApp us ↗</a></div></section>
+</main>
+
+<footer><div class="wrap"><div class="foot"><div><strong>TAJIM TOUR & TRAVELS</strong><p>Your travel, our care.<br>Umrah • Visa • Passport • Travel Assistance</p></div><div><strong>Contact</strong><p>Call: +91 97853 83840<br>WhatsApp: +91 85049 77790<br>Website: www.tajimtours.com</p></div><div class="footlinks"><a href="#services">Services</a><a href="#umrah">Umrah</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div></div><div class="copyright">© 2026 Tajim Tour & Travels. All rights reserved. <br><small>*Prices, dates and seat availability are subject to confirmation by the travel team.</small></div></div></footer>
+<a class="whatsapp" aria-label="WhatsApp Tajim" href="https://wa.me/918504977790?text=Assalamu%20Alaikum" target="_blank">✆</a>
+</body></html>
